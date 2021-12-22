@@ -1,4 +1,4 @@
-# frontend-mentor
+# [frontend-mentor](https://jayesh2812.github.io/frontend-mentor/)
 This repository holds all frontendmentor.io projects
 
 + [nft-preview-card-component-main](https://jayesh2812.github.io/frontend-mentor/nft-preview-card-component-main)
