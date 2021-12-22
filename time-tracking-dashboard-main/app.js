@@ -20,7 +20,6 @@ const setActivities = (data) => {
         './images/icon-self-care.svg',
     ]
     data.forEach(({ title, activity_data: { current, previous } }, index) => {
-        console.log(index)
         activities.innerHTML += `
         <div class="activity-wrapper">
 
