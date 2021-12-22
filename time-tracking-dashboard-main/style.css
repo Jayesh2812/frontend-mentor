@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blue: hsl(246, 80%, 60%);
+    --violet: hsl(264, 64%, 52%);
+    --light-red: hsl(15, 100%, 70%);
+    --soft-blue: hsl(195, 74%, 62%);
+    --light-red2: hsl(348, 100%, 68%);
+    --lime-green: hsl(145, 58%, 55%);
+    --soft-orange: hsl(43, 84%, 65%);
+
+    --dark-blue: hsl(235, 46%, 20%);
+    --pale-blue: hsl(236, 100%, 87%);
+    --very-dark-blue: hsl(226, 43%, 10%);
+    --desaturated-blue: hsl(235, 45%, 61%);
+    --light: hsl(192, 15%, 94%);
+    --gap: 1.2em;
+    --min-width: 180px;
+}
+body {
+    font-family: "Rubik", sans-serif;
+    display: grid;
+    min-height: 100vh;
+    place-content: center;
+    background-color: var(--very-dark-blue);
+    color: var(--light);
+}
+
+main {
+    display: flex;
+    gap: var(--gap);
+}
+h1 {
+    font-weight: 300;
+}
+
+.profile-card {
+    background-color: var(--dark-blue);
+    min-width: var(--min-width);
+    border-radius: calc(1em);
+    display: flex;
+    flex-direction: column;
+    height:100%;
+}
+
+.profile-card-part1 {
+    padding: var(--gap);
+    background-color: var(--blue);
+    display: flex;
+    flex-direction: column;
+    border-radius: inherit;
+    flex: 1
+
+}
+.profile-addressing {
+    font-size: 0.7rem;
+    color: var(--pale-blue);
+    font-weight: 300;
+}
+.profile-name > * {
+    display: block;
+}
+.profile-img {
+    width: 3em;
+    border: 2px solid var(--light);
+    border-radius: 50%;
+    margin-bottom: var(--gap);
+}
+.profile-card-part2 {
+    padding: var(--gap);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+
+}
+.profile-frequency {
+    background-color: transparent;
+    font-family: "Rubik", sans-serif;
+    border: none;
+    color: var(--desaturated-blue);
+    font-weight: 300;
+    cursor: pointer;
+    text-align: start;
+    transition: 300ms ease-out;
+}
+.profile-frequency.active, .profile-frequency:hover {
+    color: var(--light);
+}
+
+.activities {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--gap);
+
+}
+.activity-wrapper{
+    min-width: var(--min-width);
+    min-height: var(--min-width);
+    border-radius: var(--gap);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+
+}
+.activity-wrapper::before{
+    content:'';
+    position: absolute;
+    width:100%;
+    min-height: 50%;
+    top: 0;
+    background-color: var(--bg-color);
+}
+
+.activity-wrapper:nth-of-type(1)::before { --bg-color: var(--light-red)}
+.activity-wrapper:nth-of-type(2)::before { --bg-color: var(--soft-blue)}
+.activity-wrapper:nth-of-type(3)::before { --bg-color: var(--light-red2)}
+.activity-wrapper:nth-of-type(4)::before { --bg-color: var(--lime-green)}
+.activity-wrapper:nth-of-type(5)::before { --bg-color: var(--violet)}
+.activity-wrapper:nth-of-type(6)::before { --bg-color: var(--soft-orange)}
+
+.activity-wrapper-img{
+    position:absolute;
+    top: -.2em;
+    right: var(--gap);
+    width: 3em;
+}
+.activity {
+    background-color: var(--dark-blue);
+    border-radius: inherit;
+    padding: var(--gap);
+    position: relative;
+    z-index: 1;
+    cursor:pointer;
+    transition: 300ms ease-out;
+
+
+}
+.activity:hover{
+    background-color: var(--desaturated-blue);
+}
+.activity-name{
+    position: relative;
+    font-size: 0.9rem;
+}
+.activity-more-options{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 300ms ease-out;
+    cursor: pointer;
+    opacity: 0.7
+}
+
+.activity-more-options:hover{
+    opacity: 1;
+
+}
+.activity-current{
+    margin-block: 0.6em 0.3em;
+}
+.activity-previous{
+    color: var(--pale-blue);
+    font-weight: 300;
+    font-size: .75rem;
+}
