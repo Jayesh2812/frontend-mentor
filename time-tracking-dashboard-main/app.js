@@ -20,6 +20,8 @@ const setActivities = (data) => {
         './images/icon-self-care.svg',
     ]
     data.forEach(({ title, activity_data: { current, previous } }, index) => {
+        let previous_period_name = frequency === "daily" ? "Yesterday" : 
+                                    frequency === "weekly" ? "Last Week" : "Last Month"
         activities.innerHTML += `
         <div class="activity-wrapper">
 
@@ -30,7 +32,7 @@ const setActivities = (data) => {
                     <img src="./images/icon-ellipsis.svg" alt="ellipsis" class="activity-more-options" />
                 </p>
                 <h1 class="activity-current">${current}hrs</h1>
-                <p class="activity-previous">Last week - ${previous}hrs</p>
+                <p class="activity-previous">${previous_period_name} - ${previous}hrs</p>
             </div>
         </div>
         `;
@@ -46,7 +48,6 @@ btns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
         let new_frequency = e.target.getAttribute("aria-data");
         if (frequency !== new_frequency) {
-            console.log(e.target);
             document.querySelector(".active").classList.remove("active");
             e.target.classList.add("active");
 

@@ -129,6 +129,7 @@ h1 {
     top: -.2em;
     right: var(--gap);
     width: 3em;
+    outline: 1px solid red;
 }
 .activity {
     background-color: var(--dark-blue);
