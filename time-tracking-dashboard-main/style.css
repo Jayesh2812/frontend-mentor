@@ -129,7 +129,6 @@ h1 {
     top: -.2em;
     right: var(--gap);
     width: 3em;
-    outline: 1px solid red;
 }
 .activity {
     background-color: var(--dark-blue);
@@ -174,7 +173,7 @@ h1 {
 
 
 /* Mobile view */
-@media(max-width: 375px){
+@media(max-width: 400px){
     body{
         padding: var(--gap);
         display: block;        
