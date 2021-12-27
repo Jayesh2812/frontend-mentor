@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+    --very-dark-blue-main-BG: hsl(216, 54%, 11%);
+    --very-dark-blue-card-BG: hsl(216, 50%, 16%);
+    --very-dark-blue-line: 215, 32%, 27%;
+    --white: hsl(0, 0%, 100%);
+    --gap: 1em;
+}
+html {
+}
+body {
+    background-color: var(--very-dark-blue-main-BG);
+    font-family: "Outfit", sans-serif;
+    color: var(--soft-blue);
+}
+main {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+}
+.card {
+    max-width: 18rem;
+    padding: var(--gap);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    border-radius: 0.65em;
+    background-color: var(--very-dark-blue-card-BG);
+    box-shadow: 
+        0 1.2em 1px 0.6em hsla(var(--very-dark-blue-line), 0.09),
+        0 1.5em 1px 2.3em hsla(var(--very-dark-blue-line), 0.05);
+}
+.card-img {
+    width: 100%;
+    border-radius: inherit;
+    font-weight: 600;
+    
+}
+
+.card-img-wrapper{
+    display: flex;
+    position: relative;
+    border-radius: 0.4em;
+    cursor:pointer
+
+
+}
+.card-img-wrapper::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('./images/icon-view.svg');
+    background-repeat: no-repeat ;
+    background-position: center;
+    background-color: rgba(0, 255, 255, 0.5);
+    border-radius: inherit;
+    opacity: 0;
+    transition: 300ms ease-out opacity;
+}
+.card-img-wrapper:hover::after{
+    opacity: 1;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    color: var(--white);
+    font-weight: 600;
+    transition: 250ms ease-out color;
+}
+.card-title:hover {
+    color: var(--cyan);
+    cursor: pointer;
+}
+.card-description {
+    font-size: 0.9rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+.card-details {
+    display: flex;
+    justify-content: space-between;
+}
+.card-details > * {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    gap: 0.5em;
+}
+.card-count span {
+    color: var(--cyan);
+    font-weight: 400;
+}
+.card-time-left span {
+    font-weight: 300;
+}
+.card-attribution {
+    display: flex;
+    gap: var(--gap);
+    align-items: center;
+}
+.card-author-img {
+    width: 1.7rem;
+    border: 1px solid var(--white);
+    border-radius: 50%;
+}
+.card-author-details {
+    font-size: 0.85rem;
+    font-weight: 300;
+}
+hr {
+    border: none;
+    border-top: 1px solid var(--white);
+    opacity: 0.2;
+}
+.card-author-name {
+    color: var(--white);
+}
+.card-author-name:hover {
+    color: var(--cyan);
+    cursor: pointer;
+    transition: 250ms ease-out color;
+    
+}

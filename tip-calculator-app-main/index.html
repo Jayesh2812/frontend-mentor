@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <script src="app.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <title>tip-calculator-app-main</title>
+    </head>
+    <body>
+        <form>
+            <h1> <span>Spli</span><span>tter</span> </h1>
+            <div class="calculator">
+                <div class="input-section">
+                    <div class="bill-wrapper">
+                        <label for="bill">Bill </label>
+                        <span class="error-msg">Can't be zero</span>
+                        <input
+                            type="number"
+                            id="bill"
+                            name="bill"
+                            class="bill-input"
+                            placeholder="0"
+                        />
+                    </div>
+
+                    <div class="tip-wrapper">
+                        <label  for="tip">Select Tip %</label>
+                        <div class="tip-percent-grp">
+                            <input
+                                type="radio"
+                                value="5"
+                                name="tip"
+                                id="tip-5"
+                                class="tip-input"
+                            />
+                            <label tabindex="0" for="tip-5">5%</label>
+
+                            <input
+                                type="radio"
+                                value="10"
+                                name="tip"
+                                id="tip-10"
+                                class="tip-input"
+                            />
+                            <label tabindex="0" for="tip-10">10%</label>
+
+                            <input
+                                type="radio"
+                                value="15"
+                                name="tip"
+                                id="tip-15"
+                                class="tip-input"
+                            />
+                            <label tabindex="0" for="tip-15">15%</label>
+
+                            <input
+                                type="radio"
+                                value="20"
+                                name="tip"
+                                id="tip-20"
+                                class="tip-input"
+                            />
+                            <label tabindex="0" for="tip-20">20%</label>
+
+                            <input
+                                type="radio"
+                                value="25"
+                                name="tip"
+                                id="tip-25"
+                                class="tip-input"
+                            />
+                            <label tabindex="0" for="tip-25">25%</label>
+
+                            <input
+                                type="number"
+                                name="tip"
+                                placeholder="Custom"
+                                id="tip-custom"
+                                class="tip-input"
+                                min="0"
+
+                            />
+                        </div>
+                    </div>
+                    <div class="people-wrapper">
+                        <label for="people">Number of People </label>
+                        <span class="error-msg ">Can't be zero</span>
+                        <input
+                            type="number"
+                            name="people"
+                            id="people"
+                            class="people-input"
+                            placeholder="1"
+                            min="0"
+                        />
+                    </div>
+                </div>
+                <div class="output-section">
+                    <div class="tip-amount">
+                        <p class="tip-amount-label">
+                            <span> Tip Amount</span> <span class="subtext">/ person</span>
+                        </p>
+                        <h2 class="tip-amount-value">$0.00</h2>
+                    </div>
+                    <div class="total">
+                        <p class="total-label">
+                            <span>Total</span> <span class="subtext">/ person</span>
+                        </p>
+                        <h2 class="total-value">$0.00</h2>
+                    </div>
+
+                    <button type="reset">Reset</button>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>
