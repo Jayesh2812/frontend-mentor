@@ -1,0 +1,77 @@
+.main-activity{
+    padding-inline: var(--padding-inline);
+    padding-block: 2em;
+    background-image: linear-gradient(to bottom,  transparent 50%, var(--gray) 50%);
+
+}
+.shorten-wrapper{
+    background: url('../public/images/bg-shorten-desktop.svg') no-repeat;
+    background-color: var(--dark-violet);
+    padding: 3em;
+    position: relative;
+    display: flex;
+    gap: 1em;
+    border-radius: 0.7em;
+    overflow: hidden;
+
+}
+.actual-url{
+    flex: 1;
+}
+.input-error{
+    outline: 3px solid var(--red);
+}
+.actual-url::placeholder{
+    opacity: 0.5;
+}
+.input-error::placeholder{
+    color: var(--red);
+}
+.actual-url, .shorten-btn{
+    font-size: 1.2rem;
+    padding: 1em 1.5em;
+    border-radius: .5em;
+    border: none;
+}
+.shorten-btn{
+    background-color: var(--cyan);
+    color: var(--white);
+    font-weight: 700;
+    cursor: pointer;
+    transition: 250ms opacity ease;
+
+}
+.shorten-btn:hover{
+    opacity: 0.5;
+}
+.error-msg{
+    position: absolute;
+    bottom: 1em;
+    color: var(--red);
+    width: max-content;
+
+}
+
+@media screen and (max-width: 405px) {
+    .shorten-wrapper{
+        flex-direction: column;
+        padding-inline: var(--padding-inline);
+        gap: 2.3em;
+        background-image: url('../public/images/bg-shorten-mobile.svg');
+        background-position: right top;
+    }
+    .actual-url, .shorten-btn{
+        padding: 0.5em 0.7em ;
+        border-radius: 3px;
+        font-size: 1.1rem;
+    }
+    .error-msg{
+        bottom: initial;
+        top: 5em;
+        font-size: 0.9rem;
+        font-weight: 400;
+    }
+
+
+    
+}

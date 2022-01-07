@@ -1,0 +1,101 @@
+.statistics {
+    padding-inline: var(--padding-inline);
+    padding-block: 15vh;
+    background-color: var(--gray);
+}
+.section-title {
+    text-align: center;
+    font-size: clamp(1.5rem, 2vw + 1rem, 3.3rem);
+    color: var(--very-dark-violet);
+}
+.section-description {
+    text-align: center;
+    font-weight: 400;
+    color: var(--grayish-violet);
+    font-size: 1.1rem;
+    max-width: 50%;
+    margin: 0 auto;
+}
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2em;
+    padding-block: 15vh;
+    position: relative;
+}
+.cards::before {
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 5px;
+    background-color: var(--cyan);
+    inset: 55% auto auto 50%;
+    transform: translate(-50%, -50%);
+}
+.card {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    padding-top: 5em;
+    border-radius: 0.4em;
+    gap: 1em;
+    position: relative;
+    width: clamp(20em, 31%, 30em);
+}
+.card::after {
+    content: "";
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 5.5em;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: var(--dark-violet);
+    left: 2em;
+    top: 0;
+    transform: translateY(-50%);
+}
+.card:nth-of-type(1) {
+    transform: translateY(0em);
+}
+.card:nth-of-type(2) {
+    transform: translateY(2.75em);
+}
+.card:nth-of-type(3) {
+    transform: translateY(5.5em);
+}
+
+.card:nth-of-type(1)::after {
+    background-image: url("../public/images/icon-brand-recognition.svg");
+}
+.card:nth-of-type(2)::after {
+    background-image: url("../public/images/icon-detailed-records.svg");
+}
+.card:nth-of-type(3)::after {
+    background-image: url("../public/images/icon-fully-customizable.svg");
+}
+.card-title {
+    font-size: 1.5rem;
+}
+.card-description {
+    color: var(--grayish-violet);
+    font-weight: 400;
+}
+@media screen and (max-width: 405px) {
+    .section-description {
+        margin-top: 1em;
+        max-width: initial;
+    }
+    .cards::before{
+        width: 8px;
+        height: 80%;
+        left: 50%;
+    }
+    .card::after{
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+}

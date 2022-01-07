@@ -1,0 +1,83 @@
+.previous-links {
+    background-color: var(--gray);
+    padding-inline: var(--padding-inline);
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.previous-link {
+    background-color: white;
+    display: flex;
+    padding: 1em 2em;
+    border-radius: 0.3em;
+    gap: 1.5em;
+    align-items: center;
+}
+.actual-link {
+    flex: 1;
+    height: 2.5ch;
+    overflow: hidden;
+}
+.actual-link,
+.shortened-link,
+.copy-btn {
+    font-weight: 400;
+    font-size: 1.25rem;
+}
+.shortened-link {
+    color: var(--cyan);
+}
+.copy-btn {
+    border-radius: 0.3em;
+    background-color: var(--cyan);
+    border: none;
+    padding: 0.5em;
+    min-width: 7.5em;
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--white);
+    font-size: 1rem;
+    transition: 250ms ease;
+    transition-property: opacity background-color;
+}
+.copied-btn {
+    background-color: var(--dark-violet);
+}
+.copy-btn:hover {
+    opacity: 0.5;
+}
+@media screen and (max-width: 405px) {
+    .previous-link {
+        flex-direction: column;
+        gap: 0.9em;
+        padding-inline: var(--padding-inline);
+        position: relative;
+    }
+    .previous-link::before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background-color: var(--grayish-violet-alpha);
+        top: 3.2em;
+
+    }
+    .actual-link,
+    .shortened-link{
+        width: 100%;
+        font-size: 1.1rem;
+    }
+    .shortened-link{
+        margin-top: 0.5em;
+    }
+    .actual-link{
+        max-height: 2ch;
+    }
+    .copy-btn {
+        width: 100%;
+        font-size: 1.2rem;
+    }
+    .copy-btn:hover{
+        opacity: 1;
+    }
+}

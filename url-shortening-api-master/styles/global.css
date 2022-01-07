@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --cyan: hsl(180, 66%, 49%);
+    --dark-violet: hsl(257, 27%, 26%);
+    --red: hsl(0, 87%, 67%);
+    --gray: hsl(0, 0%, 97%);
+    --grayish-violet: hsl(257, 7%, 63%);
+    --grayish-violet-alpha: hsla(258, 7%, 63%, 0.267);
+    --very-dark-blue: hsl(255, 11%, 22%);
+    --very-dark-violet: hsl(260, 8%, 14%);
+    --white: hsl(192, 15%, 95%);
+    --padding-inline: calc(10vw - 1em);
+    --mobile-limit: 375px;
+}
+body, input, button {
+    font-family: "Poppins", sans-serif;
+}
+a{
+    text-decoration: none;
+}

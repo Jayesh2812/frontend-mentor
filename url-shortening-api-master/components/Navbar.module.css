@@ -1,0 +1,122 @@
+.navbar {
+    display: flex;
+    gap: 3em;
+    align-items: center;
+    padding-block: 3em;
+    padding-inline: var(--padding-inline);
+}
+.logo{
+    display: grid;
+    place-content: center;
+}
+.burger {
+    width: 1.5em;
+    height: 0.2em;
+    background-color: var(--grayish-violet);
+    cursor: pointer;
+    position: relative;
+    transition: 300ms ease background-color;
+    display: none;
+    outline-offset: 1.6em;
+}
+.active.burger{
+    background-color:transparent
+}
+.burger::before, .burger::after {
+    content: '';
+    position: absolute;
+    background-color: var(--grayish-violet);
+    width: inherit;
+    height: inherit;
+    bottom: -0.5rem;
+    transition: 300ms ease;
+}
+.burger::after{
+    bottom: 0.5rem;
+}
+.active::after, .active::before{
+    bottom: 0;
+    transform: rotate(45deg);
+}
+.active::before{
+    transform: rotate(-45deg);
+}
+.navLinks {
+    display: flex;
+    list-style: none;
+    gap: 2em;
+    flex: 1;
+}
+.navItem{
+    display: grid;
+    color: var(--grayish-violet);
+    font-weight: 700;
+    transition: 250ms ease color;
+}
+.navItem:hover{
+    color: var(--very-dark-violet);
+}
+.navLink{
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    font-weight: inherit;
+    padding-block: 0.5em ;
+}
+.login{
+    margin-left: auto;
+}
+.signup .navLink{
+    color: var(--white);
+    background-color: var(--cyan);
+    border-radius: 100vw;
+    padding-inline: 1.3em;
+    transition: 250ms opacity ease;
+}
+.signup:hover .navLink{
+    opacity: 0.5;
+}
+@media screen and (max-width: 405px){
+    .navbar{
+        justify-content: space-between;
+        position: relative;
+        padding-bottom: 1.5em;
+    }
+    .navLinks{
+        /* display: none; */
+        flex-direction: column;
+        align-items: stretch;
+        background-color: var(--dark-violet);
+        position: absolute;
+        width:calc( 100% - 2 * var(--padding-inline));
+        top: 100%;
+        padding: 2em var(--padding-inline);
+        gap: 1em;
+
+        transform: rotateX(90deg);
+        transform-origin: top;
+        transition: 300ms transform ease-in;
+        border-radius: .7em;
+    }
+    .active + .navLinks{
+        transform: none;
+    }
+    .navLinks{
+        text-align: center;
+    }
+    .login{
+        padding-top: 1em;
+        margin: initial;
+        border-top: 2px solid var(--grayish-violet-alpha);
+    }
+    .burger{
+        display: block;
+    }
+    .navItem{
+        color: var(--white);
+    }
+    .navItem:hover{
+        color: var(--cyan)
+    }
+
+}
