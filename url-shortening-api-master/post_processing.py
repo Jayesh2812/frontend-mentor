@@ -37,8 +37,6 @@ def replace_paths_in_css_files():
         except:
             print(f"{bcolors.FAIL}Failed{bcolors.ENDC}")
 
-    
-
 def change__next_to_next_in_js_and_html_files():
     print("Replacing _next by next in html and js files")
 
