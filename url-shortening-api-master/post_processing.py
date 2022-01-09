@@ -61,4 +61,4 @@ def change__next_to_next_in_js_and_html_files():
     print(f"{bcolors.OKGREEN}Rename {old_dir} to {new_dir}{bcolors.ENDC}")
 
 replace_paths_in_css_files()
-change__next_to_next_in_js_and_html_files()
+# change__next_to_next_in_js_and_html_files()
