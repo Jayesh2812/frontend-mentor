@@ -6,8 +6,8 @@ function Navbar() {
         <header>
 
             <nav className={styles.navbar}>
-                <Link href=''>
-                    <a href="" className={styles.logo}>
+                <Link href='#'>
+                    <a href="#" className={styles.logo}>
                         <img src='images/logo.svg' />
                     </a>
                 </Link>
@@ -18,27 +18,27 @@ function Navbar() {
                 ></div>
                 <ul className={styles.navLinks}>
                     <li className={styles.navItem}>
-                        <Link href="">
+                        <Link href="#">
                             <a className={styles.navLink}>Features</a>
                         </Link>
                     </li>
                     <li className={styles.navItem}>
-                        <Link href="">
+                        <Link href="#">
                             <a className={styles.navLink}>Pricing</a>
                         </Link>
                     </li>
                     <li className={styles.navItem}>
-                        <Link href="">
+                        <Link href="#">
                             <a className={styles.navLink}>Resources</a>
                         </Link>
                     </li>
                     <li className={`${styles.navItem} ${styles.login}`} >
-                        <Link href="">
+                        <Link href="#">
                             <a className={styles.navLink}>Login</a>
                         </Link>
                     </li>
                     <li className={`${styles.navItem} ${styles.signup}`}>
-                        <Link href="">
+                        <Link href="#">
                             <a className={styles.navLink}>Sign Up</a>
                         </Link>
                     </li>

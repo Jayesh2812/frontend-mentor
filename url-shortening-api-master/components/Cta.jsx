@@ -8,8 +8,8 @@ function Cta() {
     return (
         <section className={classes('cta-section')}>
             <h2 className={classes("message")}>Boost your links today</h2>
-            <Link href="">
-                <a href="" className={classes("cta-btn btn")}>
+            <Link href="#">
+                <a href="#" className={classes("cta-btn btn")}>
                     Get Started
 
                 </a>

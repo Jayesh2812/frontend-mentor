@@ -25,8 +25,8 @@ function Footer() {
 
     return (
         <footer className={classes('footer')}>
-            <Link href=''>
-                <a href="" className={styles.logo}>
+            <Link href='#'>
+                <a href="#" className={styles.logo}>
                     <img src='images/logo-white.svg' />
                 </a>
             </Link>
@@ -34,22 +34,22 @@ function Footer() {
             <ul className={classes("footer-links")}>
                 <h3 className={classes("footer-links-title")}>Features</h3>
                 <li className={classes("footer-item")}>
-                    <Link href="">
-                        <a href="" className={classes("footer-link")}>
+                    <Link href="#">
+                        <a href="#" className={classes("footer-link")}>
                             Link Shortening
                         </a>
                     </Link>
                 </li>
                 <li className={classes("footer-item")}>
-                    <Link href="">
-                        <a href="" className={classes("footer-link")}>
+                    <Link href="#">
+                        <a href="#" className={classes("footer-link")}>
                             Branded Links
                         </a>
                     </Link>
                 </li>
                 <li className={classes("footer-item")}>
-                    <Link href="">
-                        <a href="" className={classes("footer-link")}>
+                    <Link href="#">
+                        <a href="#" className={classes("footer-link")}>
                             Analytics
                         </a>
                     </Link>
@@ -58,22 +58,22 @@ function Footer() {
             <ul className={classes("footer-links")}>
                 <h3 className={classes("footer-links-title")}>Resources</h3>
                 <li className={classes("footer-item")}>
-                    <Link href="">
-                        <a href="" className={classes("footer-link")}>
+                    <Link href="#">
+                        <a href="#" className={classes("footer-link")}>
                             Blog
                         </a>
                     </Link>
                 </li>
                 <li className={classes("footer-item")}>
-                    <Link href="">
-                        <a href="" className={classes("footer-link")}>
+                    <Link href="#">
+                        <a href="#" className={classes("footer-link")}>
                             Developers
                         </a>
                     </Link>
                 </li>
                 <li className={classes("footer-item")}>
-                    <Link href="">
-                        <a href="" className={classes("footer-link")}>
+                    <Link href="#">
+                        <a href="#" className={classes("footer-link")}>
                             Support
                         </a>
                     </Link>
@@ -82,29 +82,29 @@ function Footer() {
             <ul className={classes("footer-links")}>
                 <h3 className={classes("footer-links-title")}>Company</h3>
                 <li className={classes("footer-item")}>
-                    <Link href="">
-                        <a href="" className={classes("footer-link")}>
+                    <Link href="#">
+                        <a href="#" className={classes("footer-link")}>
                             About
                         </a>
                     </Link>
                 </li>
                 <li className={classes("footer-item")}>
-                    <Link href="">
-                        <a href="" className={classes("footer-link")}>
+                    <Link href="#">
+                        <a href="#" className={classes("footer-link")}>
                             Our Team
                         </a>
                     </Link>
                 </li>
                 <li className={classes("footer-item")}>
-                    <Link href="">
-                        <a href="" className={classes("footer-link")}>
+                    <Link href="#">
+                        <a href="#" className={classes("footer-link")}>
                             Careers
                         </a>
                     </Link>
                 </li>
                 <li className={classes("footer-item")}>
-                    <Link href="">
-                        <a href="" className={classes("footer-link")}>
+                    <Link href="#">
+                        <a href="#" className={classes("footer-link")}>
                             Contact
                         </a>
                     </Link>
@@ -112,23 +112,23 @@ function Footer() {
             </ul>
 
             <div className={classes("social-media")}>
-                <Link href="">
-                    <a href="" >
+                <Link href="#">
+                    <a href="#" >
                         <FaceBookIcon className={classes('social-media-icon')}/>
                     </a>
                 </Link>
-                <Link href="">
-                    <a href="" >
+                <Link href="#">
+                    <a href="#" >
                         <TwitterIcon className={classes('social-media-icon')}/>
                     </a>
                 </Link>
-                <Link href="">
-                    <a href="" >
+                <Link href="#">
+                    <a href="#" >
                         <PinterestIcon className={classes('social-media-icon')}/>
                     </a>
                 </Link>
-                <Link href="">
-                    <a href="" >
+                <Link href="#">
+                    <a href="#" >
                         <InstagramIcon className={classes('social-media-icon')}/>
                     </a>
                 </Link>

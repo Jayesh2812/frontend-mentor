@@ -14,8 +14,8 @@ function HeroHome() {
                 Build your brand’s recognition and get detailed insights on how your links are performing.
             </h2>
 
-            <Link href="">
-                <a href=""  className={styles["cta-btn"]}>
+            <Link href="#">
+                <a href="#"  className={styles["cta-btn"]}>
                     
                 Get Started
                 </a>
