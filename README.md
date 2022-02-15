@@ -7,4 +7,4 @@ This repository holds all frontendmentor.io projects
 + [tip-calculator-app-main](https://jayesh2812.github.io/frontend-mentor/tip-calculator-app-main)
 + [testimonials-grid-section-main](https://jayesh2812.github.io/frontend-mentor/testimonials-grid-section-main)
 + [fylo-data-storage-component-master](https://jayesh2812.github.io/frontend-mentor/fylo-data-storage-component-master)
-+ [url-shortening-api-master](https://jayesh2812.github.io/frontend-mentor/url-shortening-api-master)
++ [url-shortening-api-master](https://frontend-mentor-ten-xi.vercel.app/)
