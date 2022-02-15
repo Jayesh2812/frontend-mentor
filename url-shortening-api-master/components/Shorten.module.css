@@ -5,7 +5,7 @@
 
 }
 .shorten-wrapper{
-    background: url('../public/images/bg-shorten-desktop.svg') no-repeat;
+    background: url('/images/bg-shorten-desktop.svg') no-repeat;
     background-color: var(--dark-violet);
     padding: 3em;
     position: relative;
@@ -57,7 +57,7 @@
         flex-direction: column;
         padding-inline: var(--padding-inline);
         gap: 2.3em;
-        background-image: url('../public/images/bg-shorten-mobile.svg');
+        background-image: url('/images/bg-shorten-mobile.svg');
         background-position: right top;
     }
     .actual-url, .shorten-btn{

@@ -1,6 +1,6 @@
 .cta-section{
     padding-inline: var(--padding-inline);
-    background: url('../public/images/bg-boost-desktop.svg') var(--dark-violet);
+    background: url('/images/bg-boost-desktop.svg') var(--dark-violet);
     padding-block: 3em;
     display: flex;
     flex-direction: column;
@@ -29,7 +29,7 @@
 }
 @media screen and (max-width: 405px) {
     .cta-section{
-        background-image: url('../public/images/bg-boost-mobile.svg');
+        background-image: url('/images/bg-boost-mobile.svg');
         background-position: bottom;
         padding-block: 5em;
     }
