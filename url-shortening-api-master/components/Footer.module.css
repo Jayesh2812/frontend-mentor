@@ -40,7 +40,7 @@
 .social-media-icon:hover path{
     fill: var(--cyan);  
 }
-@media screen and (max-width: 405px) {
+@media screen and (max-width: 500px) {
     .footer{
         display: block;
         text-align: center;

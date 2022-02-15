@@ -3,7 +3,7 @@
     padding-block: 5em var(--padding-inline);
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    background: url('../public/images/illustration-working.svg') no-repeat ;
+    background: url('/images/illustration-working.svg') no-repeat ;
     background-position:  right -12em center;
 }
 .hero-title{
@@ -38,7 +38,7 @@
     opacity: 0.5;
 
 }
-@media screen and (max-width : 405px) {
+@media screen and (max-width : 500px) {
     .hero-home{
         display: flex;
         flex-direction: column;

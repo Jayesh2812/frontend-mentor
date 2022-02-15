@@ -76,7 +76,7 @@
 .signup:hover .navLink{
     opacity: 0.5;
 }
-@media screen and (max-width: 405px){
+@media screen and (max-width: 500px){
     .navbar{
         justify-content: space-between;
         position: relative;
