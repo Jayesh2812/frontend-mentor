@@ -1,0 +1,49 @@
+.navbar{
+    min-width: 100vw;
+    display: flex;
+    padding: 2.4rem;
+    position: absolute;
+}
+.mobile-nav {
+    width: 25.4rem;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 3.2rem;
+    transform: translateX(100%);
+    transition: 300ms ease transform;
+    backdrop-filter: blur(8.15rem)
+
+}
+.mobile-nav.active{
+    transform: translate(0);
+}
+.nav-items{
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+.nav-item{
+    font-size: 1.6rem;  
+    font-weight: 400;
+    color: var(--white);
+    display: flex;
+    gap: 1.1rem;
+    letter-spacing: 0.27rem;
+
+}
+.nav-item-number{
+    font-weight: 700;
+}
+.nav-item-number{
+
+}
+.open-menu-btn{
+    display: block;
+    margin-left: auto;
+}
+.close-menu-btn{
+    display: block;
+    margin-left: auto;
+}

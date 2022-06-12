@@ -1,8 +1,12 @@
 import Head from 'next/head'
 import Image from 'next/image'
-
-export default function Home() {
+import Navbar from '../components/Navbar/Navbar'
+import Home from '../containers/Home/Home'
+export default function index() {
   return (
-    <div>SO, YOU WANT TO TRAVEL TO SPACE</div>
+    <>
+    <Navbar />
+    <Home />
+    </>
   )
 }

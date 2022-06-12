@@ -6,6 +6,7 @@
 
 html{
     font-size: 62.5%;
+    overflow-x: hidden;
 }
 :root{
     --white: #FFFFFF;
@@ -19,8 +20,31 @@ body{
     font-family: var(--barlow-regular);
     font-size: 1.8rem;
     line-height: 3.2rem;
-}
+    background-color: var(--dark);
+    color: var(--white);
+    position: relative;
+    max-width: 100vw;
+    overflow-x: hidden;
 
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+img{
+    display: block;
+    max-width: 100%;
+}
+button{
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--white);
+
+
+}
 .heading1, .heading2, .heading3, .heading4, .sub-heading1{
     font-family: var(--bellefair-regular);
 }

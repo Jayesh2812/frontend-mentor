@@ -1,0 +1,51 @@
+
+.home{
+    text-align: center;
+    padding: 2.4rem;
+    padding-top: 11.2rem;
+    background: url('/assets/home/background-home-mobile.jpg') no-repeat;
+    background-size: contain;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    align-items: center;
+
+}
+.home-address{
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.92rem;
+    letter-spacing: 0.27rem;
+}
+
+.home-heading{
+    font-size: 8rem;
+    line-height: 10rem;
+    font-weight: 400;
+    font-family: var(--bellefair-regular);
+
+}
+
+.home-description{
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    font-weight: 400;
+    color: var(--accent-blue);
+    margin-bottom: 8.1rem;
+
+}
+.cta-btn{
+    height: 15rem;
+    aspect-ratio: 1;
+    justify-self: end;
+    background-color: var(--white);
+    border-radius: 50%;
+
+}
+.cta-text{
+    font-family: var(--bellefair-regular);
+    font-weight: 400;
+    font-size: 2rem;
+    color: var(--dark);
+}
