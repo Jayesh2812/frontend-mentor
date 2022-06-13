@@ -4,7 +4,7 @@ import styles from "./Home.module.scss";
 function Home() {
   const cx = useStyle(styles);
   return (
-    <div className={cx("home")}>
+    <section className={cx("home")}>
       <h3 className={cx("home-address")}>SO, YOU WANT TO TRAVEL TO</h3>
       <h1 className={cx("home-heading")}>SPACE</h1>
       <p className={cx("home-description")}>
@@ -17,7 +17,7 @@ function Home() {
       <button className={cx("cta-btn")}>
         <h2 className={cx("cta-text")}>EXPLORE</h2>
       </button>
-    </div>
+    </section>
   );
 }
 

@@ -25,7 +25,19 @@ body{
     position: relative;
     max-width: 100vw;
     overflow-x: hidden;
+    font-weight: 400;
 
+
+}
+section{
+    padding: 2.4rem;
+    padding-top: 8.8rem;
+}
+hr{
+    width: 100%;
+    height: 0.1rem;
+    background-color: #383B4B;
+    border: none;
 }
 ul{
     list-style: none;
@@ -42,6 +54,9 @@ button{
     background-color: transparent;
     cursor: pointer;
     color: var(--white);
+    font-family: var(--barlow-regular);
+    font-weight: 400;
+
 
 
 }

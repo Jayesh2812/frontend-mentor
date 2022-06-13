@@ -1,0 +1,71 @@
+.destination{
+    --bg-image-path: url('/assets/destination/background-destination-mobile.jpg');
+    background: var(--bg-image-path) no-repeat;
+    background-size: cover;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.destination-address{
+    font-size: 1.6rem;
+    line-height: 1.92rem;
+    letter-spacing: 0.27rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.8rem;
+}
+.destination-numbers{
+    max-width: 2.5ch;
+    overflow: hidden;
+}
+.destination-number{
+    font-weight: 700;
+    opacity: 0.25;
+}
+.destination-images{
+    width: 17rem;
+    aspect-ratio: 1;
+    display: flex;
+    overflow: hidden;
+    gap: 2rem;
+    margin-top: 3.2rem;
+}
+.destination-nav{
+    display: flex;
+    gap: 2.6rem;
+}
+.nav-item{
+    padding-bottom: 0.8rem;
+    font-size: 1.4rem;
+    line-height: 1.68rem;
+    letter-spacing: 0.23rem;
+    margin-top: 2.6rem;
+    text-transform: uppercase;
+    border-bottom: 0.3rem solid var(--white);
+}
+
+.destination-infos{
+    margin-block: 2rem 3.2rem;
+    display: flex;
+    max-width: 100%;
+    overflow: hidden;
+}
+.destination-info{
+    min-width: 100%;
+}
+.destination-name{
+    font-family: var(--bellefair-regular);
+    font-size: 5.6rem;
+    font-weight: 400;
+    line-height: 6.41rem;
+    text-transform: uppercase;
+}
+.destination-description{
+    color: var(--accent-blue);
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    font-weight: 400;
+}
+
