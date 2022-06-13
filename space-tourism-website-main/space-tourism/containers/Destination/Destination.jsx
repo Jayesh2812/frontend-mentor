@@ -9,7 +9,9 @@ function Destination({ destinations }) {
       <div className={cx("destination-address")}>
         <div className={cx("destination-numbers")}>
           {destinations.map((destination, index) => (
-            <span key={index} className={cx("destination-number")}>0{index + 1}</span>
+            <span key={index} className={cx("destination-number")}>
+              0{index + 1}
+            </span>
           ))}
         </div>
 
@@ -18,15 +20,19 @@ function Destination({ destinations }) {
 
       <div className={cx("destination-images")}>
         {destinations.map((destination, index) => (
-          <img key={index} src={`/assets/destination/${destination.images.png}`} alt="" />
+          <img
+            key={index}
+            src={`/assets/destination/${destination.images.png}`}
+            alt=""
+          />
         ))}
       </div>
 
-        <div className={cx('destination-nav')}>
+      <div className={cx("destination-nav")}>
         {destinations.map((destination, index) => (
           <button className={cx("nav-item")}>{destination.name}</button>
         ))}
-        </div>
+      </div>
 
       <div className={cx("destination-infos")}>
         {destinations.map((destination, index) => (
@@ -39,21 +45,29 @@ function Destination({ destinations }) {
         ))}
       </div>
 
-      <hr className={cx("hr")}/>
+      <hr className={cx("hr")} />
 
       <div className={cx("destination-stats")}>
         <div className={cx("destination-stat")}>
           <span className={cx("stat-name")}>AVG. DISTANCE</span>
-          {destinations.map((destination, index) => (
-            <span key={index} className={cx("stat-value")}>{destination.distance}</span>
-          ))}
+          <div className={cx("stat-value-wrapper")}>
+            {destinations.map((destination, index) => (
+              <span key={index} className={cx("stat-value")}>
+                {destination.distance}
+              </span>
+            ))}
+          </div>
         </div>
 
         <div className={cx("destination-stat")}>
           <span className={cx("stat-name")}>Est. travel time</span>
-          {destinations.map((destination, index) => (
-            <span key={index} className={cx("stat-value")}>{destination.travel}</span>
-          ))}
+          <div className={cx("stat-value-wrapper")}>
+            {destinations.map((destination, index) => (
+              <span key={index} className={cx("stat-value")}>
+                {destination.travel}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </section>
