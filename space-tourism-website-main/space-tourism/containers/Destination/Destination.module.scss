@@ -1,4 +1,4 @@
-.destination{
+.destination {
     --bg-image-path: url('/assets/destination/background-destination-mobile.jpg');
     background: var(--bg-image-path) no-repeat;
     background-size: cover;
@@ -8,7 +8,8 @@
     align-items: center;
 
 }
-.destination-address{
+
+.destination-address {
     font-size: 1.6rem;
     line-height: 1.92rem;
     letter-spacing: 0.27rem;
@@ -16,76 +17,112 @@
     justify-content: center;
     gap: 1.8rem;
 }
-.destination-numbers{
-    max-width: 2.5ch;
+
+.destination-numbers {
+    max-width: 3ch;
     overflow: hidden;
+    display: flex;
+    gap: 0.5rem;
 }
-.destination-number{
+
+.destination-number {
     font-weight: 700;
     opacity: 0.25;
+    display: block;
 }
-.destination-images{
+
+.destination-images {
     width: 17rem;
     aspect-ratio: 1;
     display: flex;
     overflow: hidden;
     gap: 2rem;
     margin-top: 3.2rem;
+    border-radius: 50%;
+    & > span{
+        display: block; 
+        min-width: 100%;
+    }
+    & img{
+    }
 }
-.destination-nav{
+
+.destination-nav {
+    margin-top: 2.6rem;
     display: flex;
     gap: 2.6rem;
+    position: relative;
+
+    &::after {
+        position: absolute;
+        content: '';
+        --width: 3.6rem;
+        width: var(--width);
+        height: 0.3rem;
+        background-color: var(--white);
+        bottom: 0;
+        left: var(--left, calc(var(--width) / 2));
+        transform: translateX(-50%);
+        transition: 300ms left ease;
+    }
 }
-.nav-item{
-    padding-bottom: 0.8rem;
+
+.nav-item {
+    padding-bottom: 1rem;
     font-size: 1.4rem;
     line-height: 1.68rem;
     letter-spacing: 0.23rem;
-    margin-top: 2.6rem;
     text-transform: uppercase;
-    border-bottom: 0.3rem solid var(--white);
+    // border-bottom: 0.3rem solid var(--white);
 }
 
-.destination-infos{
+.destination-infos {
     margin-block: 2rem 3.2rem;
     display: flex;
     max-width: 100%;
     overflow: hidden;
 }
-.destination-info{
+
+.destination-info {
     min-width: 100%;
 }
-.destination-name{
+
+.destination-name {
     font-family: var(--bellefair-regular);
     font-size: 5.6rem;
     font-weight: 400;
     line-height: 6.41rem;
     text-transform: uppercase;
 }
-.destination-description{
+
+.destination-description {
     color: var(--accent-blue);
     font-size: 1.5rem;
     line-height: 2.5rem;
     font-weight: 400;
 }
-.destination-stats{
+
+.destination-stats {
     margin-top: 3.2rem;
     display: flex;
     flex-direction: column;
     gap: 3.2rem;
 }
-.stat-value-wrapper{
+
+.stat-value-wrapper {
     width: 23rem;
     display: flex;
     overflow: hidden;
 }
-.stat-name{
+
+.stat-name {
     color: var(--accent-blue);
     font-size: 1.4rem;
     line-height: 1.68rem;
     letter-spacing: 0.23rem;
 }
-.stat-value{
+
+.stat-value {
     min-width: 100%;
     display: block;
     font-family: var(--bellefair-regular);
@@ -93,4 +130,3 @@
     line-height: 3.2rem;
     text-transform: uppercase;
 }
-

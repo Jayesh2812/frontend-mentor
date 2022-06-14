@@ -3,7 +3,7 @@ import { Image, Link } from "next";
 import styles from "./Navbar.module.scss";
 import useStyle from "../../hooks/useStyle";
 function Navbar() {
-  const cx = useStyle(styles);
+  const [cx] = useStyle(styles);
   const mobileNavRef = useRef()
   
   const openMenu = () =>{

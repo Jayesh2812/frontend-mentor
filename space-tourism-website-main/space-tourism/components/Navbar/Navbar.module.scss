@@ -13,7 +13,8 @@
     padding: 3.2rem;
     transform: translateX(100%);
     transition: 300ms ease transform;
-    backdrop-filter: blur(8.15rem)
+    backdrop-filter: blur(8.15rem);
+    z-index: 1;
 
 }
 .mobile-nav.active{

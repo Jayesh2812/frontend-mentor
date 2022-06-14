@@ -2,7 +2,7 @@ import React from "react";
 import useStyle from "../../hooks/useStyle";
 import styles from "./Home.module.scss";
 function Home() {
-  const cx = useStyle(styles);
+  const [cx] = useStyle(styles);
   return (
     <section className={cx("home")}>
       <h3 className={cx("home-address")}>SO, YOU WANT TO TRAVEL TO</h3>
