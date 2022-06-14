@@ -1,6 +1,7 @@
 import React from "react";
 import useStyle from "../../hooks/useStyle";
 import styles from "./Home.module.scss";
+import Link from "next/link";
 function Home() {
   const [cx] = useStyle(styles);
   return (
@@ -14,9 +15,11 @@ function Home() {
         experience!
       </p>
 
-      <button className={cx("cta-btn")}>
-        <h2 className={cx("cta-text")}>EXPLORE</h2>
-      </button>
+      <Link href="/destination">
+        <a className={cx("cta-btn")}>
+          <h2 className={cx("cta-text")}>EXPLORE</h2>
+        </a>
+      </Link>
     </section>
   );
 }

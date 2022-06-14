@@ -40,6 +40,8 @@
     justify-self: end;
     background-color: var(--white);
     border-radius: 50%;
+    display: grid;
+    place-content: center;
 
 }
 .cta-text{
