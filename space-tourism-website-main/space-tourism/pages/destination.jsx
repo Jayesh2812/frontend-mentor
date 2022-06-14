@@ -3,14 +3,7 @@ import Navbar from "../components/Navbar/Navbar";
 import Destination from "../containers/Destination/Destination";
 
 function destination(props) {
-  return (
-    <>
-      <Navbar />
-      <main>
-        <Destination {...props} />
-      </main>
-    </>
-  );
+  return <Destination {...props} />;
 }
 export async function getStaticProps(context) {
   let { destinations } = require("../public/assets/data.json");

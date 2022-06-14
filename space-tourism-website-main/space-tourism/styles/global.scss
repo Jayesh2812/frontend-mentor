@@ -28,9 +28,13 @@ body{
     font-weight: 400;
     scroll-behavior: smooth;
 }
+header{
+    position: relative;
+}
 section{
     padding: 2.4rem;
     padding-top: 8.8rem;
+    min-height: 100vh;
 }
 hr{
     width: 100%;
