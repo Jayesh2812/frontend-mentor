@@ -33,17 +33,17 @@ function Crew({ crew, name }) {
     bringInView();
   }, [activeCrewMember]);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveCrewMember(
-        (activeCrewMember) => (activeCrewMember + 1) % crew.length
-      );
-    }, [1000]);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setActiveCrewMember(
+  //       (activeCrewMember) => (activeCrewMember + 1) % crew.length
+  //     );
+  //   }, [1000]);
 
-    return () => {
-      window.clearInterval(interval)
-    }
-  }, []);
+  //   return () => {
+  //     window.clearInterval(interval)
+  //   }
+  // }, []);
   return (
     <section className={cx("crew")}>
       <div className={cx("crew-address")}>
