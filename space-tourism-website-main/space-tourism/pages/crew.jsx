@@ -1,10 +1,8 @@
 import React from 'react'
 import Crew from "../containers/Crew/Crew";
-import { useRouter } from 'next/router'
 function crew(props) {
-  const router = useRouter()
   return (
-    <Crew {...props} name={Object.keys(router.query)[0]}/>
+    <Crew {...props}/>
   )
 }
 export async function getStaticProps(context) {

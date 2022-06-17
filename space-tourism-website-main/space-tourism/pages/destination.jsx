@@ -1,10 +1,8 @@
 import React from "react";
 import Destination from "../containers/Destination/Destination";
-import { useRouter } from 'next/router'
 
 function destination(props) {
-  const router = useRouter()
-  return <Destination {...props} name={Object.keys(router.query)[0]} />;
+  return <Destination {...props}/>;
 }
 export async function getStaticProps(context) {
   let { destinations } = require("../public/assets/data.json");

@@ -1,10 +1,8 @@
 import React from 'react'
 import Technology from "../containers/Technology/Technology";
-import { useRouter } from 'next/router'
 function technology(props) {
-  const router = useRouter()
   return (
-    <Technology {...props} name={Object.keys(router.query)[0]}/>
+    <Technology {...props}/>
   )
 }
 export async function getStaticProps(context) {
