@@ -1,0 +1,104 @@
+.crew {
+    --bg-image-path: url('/assets/crew/background-crew-mobile.jpg');
+    background: var(--bg-image-path) no-repeat;
+    background-size: cover;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    // box-shadow: inset  0 0 0 100vw rgba(0, 0, 0, 0.45);
+}
+.crew::after{
+    content: '';
+    position: absolute;
+    inset : 0;
+    background-color: rgba(0, 0, 0, 0.336);
+    backdrop-filter: blur(.5rem);
+    z-index: -1;
+}
+.crew-address {
+    font-size: 1.6rem;
+    line-height: 1.92rem;
+    letter-spacing: 0.27rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.8rem;
+}
+.crew-number {
+    font-weight: 700;
+    opacity: 0.25;
+    display: block;
+}
+.crew-images {
+    min-height: 22.3rem;
+    max-width: 22.6rem;
+    display: flex;
+    overflow: hidden;
+    gap: 2rem;
+    margin-top: 3.2rem;
+    & > span{
+        display: block; 
+        min-width: fit-content;
+    }
+    & img{
+        width: 100%;
+        object-fit: contain;
+    }
+}
+.crew-nav{
+    margin-block: 3.2rem;
+    display: flex;
+    gap: 1.6rem;
+    & > input{
+        display: none;
+    }
+    & > label{
+        width: 1rem;
+        aspect-ratio: 1;
+        display: block;
+        border-radius: 50%;
+        background-color: var(--white);
+        cursor: pointer;
+        opacity: 0.17;
+        transition: 300ms ease opacity;
+    }
+    & > input:checked+label{
+        opacity: 1;
+    }
+}
+.crew-infos {
+    display: flex;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.crew-info {
+    min-width: 100%;
+}
+.crew-role{
+    font-family: var(--bellefair-regular);
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.83rem;
+    text-transform: uppercase;
+    opacity: 0.5;
+}
+.crew-name {
+    margin-top: .8rem;
+    font-family: var(--bellefair-regular);
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: 2.75rem;
+    text-transform: uppercase;
+}
+
+.crew-description {
+    margin-top: 1.6rem;
+    color: var(--accent-blue);
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    font-weight: 400;
+    letter-spacing: .2ch;
+}

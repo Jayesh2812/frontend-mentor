@@ -1,48 +1,58 @@
 import React, { useEffect, useRef, useState } from "react";
 import useStyle from "../../hooks/useStyle";
 import styles from "./Destination.module.scss";
-import Image from 'next/image'
+import Image from "next/image";
+import { useRouter } from "next/router";
 
-function Destination({ destinations }) {
+function Destination({ destinations, name }) {
   const [cx, g] = useStyle(styles);
-  const [activeDestination, setActiveDestination] = useState(1);
+  const [activeDestination, setActiveDestination] = useState(0);
   const destinationNavRef = useRef();
   function getScrollParent(element) {
-    if(element.nodeName === 'IMG'){
-      return element.parentElement.parentElement
+    if (element.nodeName === "IMG") {
+      return element.parentElement.parentElement;
     }
-    return element.parentElement
+    return element.parentElement;
   }
-  const handleClick = (key) => (e) => {
-    const { x, width } = e.target.getBoundingClientRect();
-    const parentX = destinationNavRef.current.getBoundingClientRect().x;
-    const left = x + width / 2 - parentX + "px";
-    destinationNavRef.current.style.setProperty("--left", left);
-    let elements = document.querySelectorAll(`[data-destination-key="${key}"]`);
+  function bringInView() {
+    let elements = document.querySelectorAll(
+      `[data-destination-key="${activeDestination}"]`
+    );
     elements.forEach((element) => {
-
       getScrollParent(element).scrollTo({
         top: 0,
-        left: key * element.clientWidth,
+        left: activeDestination * element.clientWidth,
         behavior: "smooth",
       });
     });
+    const btn = document.getElementById(`nav-btn-${activeDestination}`);
+    const { x, width } = btn.getBoundingClientRect();
+    const parentX = destinationNavRef.current.getBoundingClientRect().x;
+    const left = x + width / 2 - parentX + "px";
+    destinationNavRef.current.style.setProperty("--left", left);
+  }
+  const handleClick = (key) => (e) => {
+    setActiveDestination(key);
   };
+  useEffect(() => {
+    bringInView();
+  }, [activeDestination]);
 
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setActiveDestination(
+  //       (activeDestination) => (activeDestination + 1) % destinations.length
+  //     );
+  //   }, [1000]);
+
+  //   return () => {
+  //     window.clearInterval(interval)
+  //   }
+  // }, []);
   return (
     <section className={cx("destination")}>
       <div className={cx("destination-address")}>
-        <div className={cx("destination-numbers", g`scroll-snap`)}>
-          {destinations.map((destination, index) => (
-            <span
-              key={index}
-              data-destination-key={index}
-              className={cx("destination-number")}
-            >
-              0{index + 1}
-            </span>
-          ))}
-        </div>
+        <span className={cx("destination-number")}>01</span>
 
         <span className={cx("destination-line")}>PICK YOUR DESTINATION</span>
       </div>
@@ -50,8 +60,8 @@ function Destination({ destinations }) {
       <div className={cx("destination-images", g`scroll-snap`)}>
         {destinations.map((destination, index) => (
           <Image
-            width={'100%'}
-            height={'100%'}
+            width={"100%"}
+            height={"100%"}
             key={index}
             data-destination-key={index}
             src={`/assets/destination/${destination.images.png}`}
@@ -64,6 +74,7 @@ function Destination({ destinations }) {
         {destinations.map((destination, index) => (
           <button
             key={index}
+            id={`nav-btn-${index}`}
             className={cx("nav-item")}
             onClick={handleClick(index)}
           >

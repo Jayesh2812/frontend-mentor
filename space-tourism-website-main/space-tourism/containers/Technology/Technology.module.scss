@@ -1,0 +1,97 @@
+.technology {
+    --bg-image-path: url('/assets/technology/background-technology-mobile.jpg');
+    background: var(--bg-image-path) no-repeat;
+    background-size: cover;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 0;
+}
+.technology > *:not(.technology-images){
+    margin-inline: 2.4rem;
+}
+.technology-address {
+    font-size: 1.6rem;
+    line-height: 1.92rem;
+    letter-spacing: 0.27rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.8rem;
+}
+.technology-number {
+    font-weight: 700;
+    opacity: 0.25;
+    display: block;
+}
+.technology-images {
+    width: 100%;
+    aspect-ratio: 375 / 170;
+    display: flex;
+    overflow: hidden;
+    gap: 2rem;
+    margin-top: 3.2rem;
+    & > span{
+        display: block; 
+        min-width: 100%;
+        min-height: 100%;
+    }
+    & img{
+        width: 100%;
+        object-fit: cover;
+    }
+}
+.technology-nav{
+    margin-block: 3.2rem;
+    display: flex;
+    gap: 1.6rem;
+    & > input{
+        display: none;
+    }
+    & > label{
+        font-family: var(--bellefair-regular);
+        font-size: 1.6rem;
+        display: grid;
+        place-content: center;
+        width: 4rem;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        cursor: pointer;
+        background-color: transparent;
+        transition: 300ms ease;
+        transition-property: color background-color;
+        border: 0.1rem solid rgba(white, 0.25)
+    }
+    & > input:checked+label{
+        color: var(--dark);
+        background-color: var(--white);
+
+
+    }
+}
+.technology-infos {
+    display: flex;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.technology-info {
+    min-width: 100%;
+}
+.technology-name {
+    margin-top: .8rem;
+    font-family: var(--bellefair-regular);
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: 2.75rem;
+    text-transform: uppercase;
+}
+
+.technology-description {
+    margin-top: 1.6rem;
+    color: var(--accent-blue);
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    font-weight: 400;
+    letter-spacing: .2ch;
+}

@@ -1,9 +1,10 @@
 import React from "react";
-import Navbar from "../components/Navbar/Navbar";
 import Destination from "../containers/Destination/Destination";
+import { useRouter } from 'next/router'
 
 function destination(props) {
-  return <Destination {...props} />;
+  const router = useRouter()
+  return <Destination {...props} name={Object.keys(router.query)[0]} />;
 }
 export async function getStaticProps(context) {
   let { destinations } = require("../public/assets/data.json");

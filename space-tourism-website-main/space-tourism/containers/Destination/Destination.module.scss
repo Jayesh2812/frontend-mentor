@@ -100,17 +100,19 @@
     font-size: 1.5rem;
     line-height: 2.5rem;
     font-weight: 400;
+    letter-spacing: .2ch;
+
 }
 
 .destination-stats {
     margin-top: 3.2rem;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 3.2rem;
 }
 
 .stat-value-wrapper {
-    width: 23rem;
+    min-width: 23rem;
     display: flex;
     overflow: hidden;
 }

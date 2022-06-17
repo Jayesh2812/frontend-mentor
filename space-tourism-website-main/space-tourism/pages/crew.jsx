@@ -1,9 +1,16 @@
 import React from 'react'
-
-function crew() {
+import Crew from "../containers/Crew/Crew";
+import { useRouter } from 'next/router'
+function crew(props) {
+  const router = useRouter()
   return (
-    <section>crew</section>
+    <Crew {...props} name={Object.keys(router.query)[0]}/>
   )
 }
-
+export async function getStaticProps(context) {
+  let { crew } = require("../public/assets/data.json");
+  return {
+    props: { crew }, // will be passed to the page component as props
+  };
+}
 export default crew
