@@ -53,6 +53,7 @@ function Destination({ destinations, name }) {
       <div ref={swipeRef} className={cx("destination-images", g`scroll-snap`)}>
         {destinations.map((destination, index) => (
           <Image
+            priority
             width={"100%"}
             height={"100%"}
             key={index}

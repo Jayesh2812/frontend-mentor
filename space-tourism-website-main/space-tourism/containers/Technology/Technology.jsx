@@ -40,6 +40,7 @@ function Technology({ technology: technologies }) {
       <div ref={swipeRef} className={cx("technology-images", g`scroll-snap`)}>
         {technologies.map((technology, index) => (
           <Image
+            priority
             width={"375"}
             height={"100%"}
             key={index}

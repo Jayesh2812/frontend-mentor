@@ -45,6 +45,7 @@ function Navbar() {
       <Link href="/">
         <a className={cx("logo-wrapper")}>
           <Image
+            priority
             width={48}
             height={48}
             className={cx("logo")}
@@ -55,6 +56,7 @@ function Navbar() {
       </Link>
       <button onClick={openMenu} className={cx("open-menu-btn")}>
         <Image
+          priority
           width={24}
           height={21}
           className={cx("open-menu-icon")}
@@ -78,6 +80,7 @@ function Navbar() {
       <div ref={mobileNavRef} className={cx("mobile-nav")}>
         <button onClick={closeMenu} className={cx("close-menu-btn")}>
           <Image
+            priority
             width={19}
             height={19}
             className={cx("close-menu-icon")}
