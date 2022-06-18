@@ -1,47 +1,35 @@
 import React, { useEffect, useState } from "react";
 import useStyle from "../../hooks/useStyle";
 import styles from "./Technology.module.scss";
+import useHorizontalSwipe from "../../hooks/useHorizontalSwipe";
+import useBringIntoView from "../../hooks/useBringIntoView";
 import Image from "next/image";
 import { useRouter } from "next/router";
 function Technology({ technology: technologies }) {
-  const [cx, g] = useStyle(styles);
   const [activeTechnology, setActiveTechnology] = useState(0);
-  function getScrollParent(element) {
-    if (element.nodeName === "IMG") {
-      return element.parentElement.parentElement;
-    }
-    return element.parentElement;
-  }
+  const [cx, g] = useStyle(styles);
+  const swipeRef = useHorizontalSwipe({
+    onLeftSwipe: () => {
+      setActiveTechnology(
+        (activeTechnology - 1 + 2 * technologies.length) % technologies.length
+      );
+    },
+    onRightSwipe: () => {
+      setActiveTechnology(
+        (activeTechnology + 1) % technologies.length
+      );
+    },
+  });
+  const bringIntoView = useBringIntoView(activeTechnology, 'technology')
+
   const handleChange = (index) => () => {
     setActiveTechnology(index);
   };
-  const bringInView = () => {
-    let elements = document.querySelectorAll(
-      `[data-technology-key="${activeTechnology}"]`
-    );
-    elements.forEach((element) => {
-      getScrollParent(element).scrollTo({
-        top: 0,
-        left: activeTechnology * element.clientWidth,
-        behavior: "smooth",
-      });
-    });
-  };
+
   useEffect(() => {
-    bringInView();
+    bringIntoView();
   }, [activeTechnology]);
   
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setActiveTechnology(
-  //       (activeTechnology) => (activeTechnology + 1) % technologies.length
-  //     );
-  //   }, [1000]);
-
-  //   return () => {
-  //     window.clearInterval(interval);
-  //   };
-  // }, []);
   return (
     <section className={cx("technology")}>
       <div className={cx("technology-address")}>
@@ -49,7 +37,7 @@ function Technology({ technology: technologies }) {
 
         <span className={cx("technology-line")}>SPACE LAUNCH 101</span>
       </div>
-      <div className={cx("technology-images", g`scroll-snap`)}>
+      <div ref={swipeRef} className={cx("technology-images", g`scroll-snap`)}>
         {technologies.map((technology, index) => (
           <Image
             width={"375"}
@@ -61,7 +49,6 @@ function Technology({ technology: technologies }) {
           />
         ))}
       </div>
-      <hr />
       <div className={cx("technology-nav")}>
         {technologies.map((technology, index) => (
           <>

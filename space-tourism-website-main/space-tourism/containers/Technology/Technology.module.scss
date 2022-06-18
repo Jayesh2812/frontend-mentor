@@ -6,11 +6,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-inline: 0;
+    // padding-inline: 0;
 }
-.technology > *:not(.technology-images){
-    margin-inline: 2.4rem;
-}
+// .technology > *:not(.technology-images){
+//     margin-inline: 2.4rem;
+// }
 .technology-address {
     font-size: 1.6rem;
     line-height: 1.92rem;
@@ -25,7 +25,7 @@
     display: block;
 }
 .technology-images {
-    width: 100%;
+    width: 100vw;
     aspect-ratio: 375 / 170;
     display: flex;
     overflow: hidden;
@@ -60,14 +60,30 @@
         background-color: transparent;
         transition: 300ms ease;
         transition-property: color background-color;
-        border: 0.1rem solid rgba(white, 0.25)
+        border: 0.1rem solid rgba(white, 0.25);
+        position: relative;
+        z-index: 1;
+
+    }
+    & > label::before{
+        content: '';
+        position: absolute;
+        inset:0;
+        background-color: white;
+        border-radius: 50%;
+        z-index: -1;
+        transform: scale(0);    
+        transition: 300ms ease-in transform;
+
     }
     & > input:checked+label{
         color: var(--dark);
-        background-color: var(--white);
-
-
     }
+    & > input:checked+label::before{
+        transform: scale(1);
+    }
+
+
 }
 .technology-infos {
     display: flex;

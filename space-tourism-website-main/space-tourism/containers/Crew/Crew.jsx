@@ -1,58 +1,44 @@
 import React, { useEffect, useState } from "react";
 import useStyle from "../../hooks/useStyle";
+import useHorizontalSwipe from "../../hooks/useHorizontalSwipe";
+import useBringIntoView from "../../hooks/useBringIntoView";
 import styles from "./Crew.module.scss";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
 function Crew({ crew, name }) {
   const [activeCrewMember, setActiveCrewMember] = useState(0);
+  const swipeRef = useHorizontalSwipe({
+    onLeftSwipe: () => {
+      setActiveCrewMember(
+        (activeCrewMember - 1 + 2 * crew.length) % crew.length
+      );
+    },
+    onRightSwipe: () => {
+      setActiveCrewMember(
+        (activeCrewMember + 1) % crew.length
+      );
+    },
+  });
   const [cx, g] = useStyle(styles);
-
-  function getScrollParent(element) {
-    if (element.nodeName === "IMG") {
-      return element.parentElement.parentElement;
-    }
-    return element.parentElement;
-  }
+  const bringIntoView = useBringIntoView(activeCrewMember, 'crew')
   const handleChange = (index) => () => {
     setActiveCrewMember(index);
   };
-  const bringInView = () => {
-    let elements = document.querySelectorAll(
-      `[data-crew-key="${activeCrewMember}"]`
-    );
-    elements.forEach((element) => {
-      getScrollParent(element).scrollTo({
-        top: 0,
-        left: activeCrewMember * element.clientWidth,
-        behavior: "smooth",
-      });
-    });
-  };
+
   useEffect(() => {
-    bringInView();
+    bringIntoView();
   }, [activeCrewMember]);
-
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setActiveCrewMember(
-  //       (activeCrewMember) => (activeCrewMember + 1) % crew.length
-  //     );
-  //   }, [1000]);
-
-  //   return () => {
-  //     window.clearInterval(interval)
-  //   }
-  // }, []);
   return (
     <section className={cx("crew")}>
       <div className={cx("crew-address")}>
         <span className={cx("crew-number")}>02</span>
         <span className={cx("crew-line")}>MEET YOUR CREW</span>
       </div>
-      <div className={cx("crew-images", g`scroll-snap`)}>
+      <div ref={swipeRef} className={cx("crew-images", g`scroll-snap`)}>
         {crew.map((crewMember, index) => (
           <Image
+            priority
             width={"226"}
             height={"100%"}
             key={index}

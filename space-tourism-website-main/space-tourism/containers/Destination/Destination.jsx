@@ -3,52 +3,45 @@ import useStyle from "../../hooks/useStyle";
 import styles from "./Destination.module.scss";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import useHorizontalSwipe from "../../hooks/useHorizontalSwipe";
+import useBringIntoView from "../../hooks/useBringIntoView";
 
 function Destination({ destinations, name }) {
   const [cx, g] = useStyle(styles);
   const [activeDestination, setActiveDestination] = useState(0);
   const destinationNavRef = useRef();
-  function getScrollParent(element) {
-    if (element.nodeName === "IMG") {
-      return element.parentElement.parentElement;
-    }
-    return element.parentElement;
-  }
-  function bringInView() {
-    let elements = document.querySelectorAll(
-      `[data-destination-key="${activeDestination}"]`
-    );
-    elements.forEach((element) => {
-      getScrollParent(element).scrollTo({
-        top: 0,
-        left: activeDestination * element.clientWidth,
-        behavior: "smooth",
-      });
-    });
+  const swipeRef = useHorizontalSwipe({
+    onLeftSwipe: () => {
+      setActiveDestination(
+        (activeDestination - 1 + 2 * destinations.length) % destinations.length
+      );
+    },
+    onRightSwipe: () => {
+      setActiveDestination((activeDestination + 1) % destinations.length);
+    },
+  });
+
+  const moveNavLine = () => {
     const btn = document.getElementById(`nav-btn-${activeDestination}`);
     const { x, width } = btn.getBoundingClientRect();
-    const parentX = destinationNavRef.current.getBoundingClientRect().x;
+    const { x: parentX, width: W } = destinationNavRef.current.getBoundingClientRect();
     const left = x + width / 2 - parentX + "px";
     destinationNavRef.current.style.setProperty("--left", left);
-  }
+  };
+  const bringIntoView = useBringIntoView(
+    activeDestination,
+    "destination",
+    moveNavLine
+  );
   const handleClick = (key) => (e) => {
     setActiveDestination(key);
   };
   useEffect(() => {
-    bringInView();
+    document.fonts.ready.then(function() {
+      bringIntoView();
+    })
   }, [activeDestination]);
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setActiveDestination(
-  //       (activeDestination) => (activeDestination + 1) % destinations.length
-  //     );
-  //   }, [1000]);
-
-  //   return () => {
-  //     window.clearInterval(interval)
-  //   }
-  // }, []);
   return (
     <section className={cx("destination")}>
       <div className={cx("destination-address")}>
@@ -57,7 +50,7 @@ function Destination({ destinations, name }) {
         <span className={cx("destination-line")}>PICK YOUR DESTINATION</span>
       </div>
 
-      <div className={cx("destination-images", g`scroll-snap`)}>
+      <div ref={swipeRef} className={cx("destination-images", g`scroll-snap`)}>
         {destinations.map((destination, index) => (
           <Image
             width={"100%"}
